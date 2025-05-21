@@ -1,0 +1,90 @@
+.funcion-crear-page,
+.funcion-editar-page {
+  height: 100vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.funcion-crear-card,
+.funcion-editar-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  width: 350px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.funcion-crear-card h2,
+.funcion-editar-card h2 {
+  margin-bottom: 1rem;
+  color: #1e1e1e;
+}
+
+.funcion-crear-field,
+.funcion-editar-field {
+  display: flex;
+  align-items: center;
+  background: #f8f8f8;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.funcion-crear-field input,
+.funcion-editar-field input,
+.funcion-crear-field select,
+.funcion-editar-field select {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #000;
+  width: 100%;
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+.funcion-crear-icon,
+.funcion-editar-icon {
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.funcion-crear-button,
+.funcion-editar-button {
+  background: #43a047;
+  border: none;
+  padding: 0.7rem 2rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.funcion-volver-button {
+    background: #d68e8e;
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+  }
+
+.funcion-crear-button:hover,
+.funcion-editar-button:hover {
+  background: #1565c0;
+}

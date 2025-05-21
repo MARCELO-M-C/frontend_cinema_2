@@ -1,0 +1,273 @@
+.compra-dashboard {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+.compra-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #f3f4f6;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.matriz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .pantalla {
+    background: #ccc;
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .grid-asientos {
+    display: grid;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .asiento {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    cursor: pointer;
+  }
+  
+  .asiento.disponible {
+    background-color: #d4af37; /* dorado */
+  }
+  
+  .asiento.reservado {
+    background-color: #b71c1c; /* rojo oscuro */
+    cursor: not-allowed;
+  }
+  
+  .asiento.seleccionado {
+    background-color: #1e88e5; /* azul */
+    border: 2px solid white;
+  }
+
+  .contenedor-compra {
+  max-width: 600px;
+  margin: auto;
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.contenedor-compra select,
+.contenedor-compra input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.formulario-pago {
+  margin-top: 2rem;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.formulario-pago h3 {
+  margin-bottom: 1rem;
+}
+
+.formulario-pago button {
+  background-color: #1e88e5;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.formulario-pago button:hover {
+  background-color: #1565c0;
+}
+
+/* Centrado del contenedor principal */
+.contenedor-compra {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-margin-top: 60px; /* útil si haces scroll automático */
+}
+
+/* Pantalla (barra de SCREEN) */
+.pantalla {
+  background: #ccc;
+  padding: 0.5rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+/* Grid de butacas */
+.grid-asientos {
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* Estilos de butacas */
+.asiento {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.asiento.disponible {
+  background-color: #d4af37; /* dorado */
+}
+
+.asiento.reservado {
+  background-color: #b71c1c; /* rojo oscuro */
+  cursor: not-allowed;
+}
+
+.asiento.seleccionado {
+  background-color: #1e88e5; /* azul */
+  border: 2px solid white;
+}
+
+/* Estilos del formulario de pago */
+.formulario-pago {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.formulario-pago input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.formulario-pago button {
+  background-color: #1e88e5;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.formulario-pago button:hover {
+  background-color: #1565c0;
+}
+
+.fila-select-boton {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.fila-select-boton select {
+  flex: 1;
+}
+
+.boton-regresar {
+  background-color: #c62828;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.boton-regresar:hover {
+  background-color: #b71c1c;
+}
+
+.boton-qr {
+  background-color: #43a047; /* verde */
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.boton-qr:hover {
+  background-color: #2e7d32;
+}
+
+.mensaje-confirmacion {
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+  animation: aparecer 0.5s ease-out;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.grupo-precio {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  width: 175px;
+  flex-shrink: 0;
+}
+
+.input-precio {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 6px;
+  width: 120px;
+  text-align: right;
+  font-weight: bold;
+  color: #333;
+}

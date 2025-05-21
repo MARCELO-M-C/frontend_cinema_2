@@ -1,0 +1,202 @@
+.admin-dashboard {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  background: linear-gradient(180deg, #5a09ac, #a402b9);
+  color: white;
+  width: 220px;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.sidebar-title {
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  text-align: center;
+  width: 100%;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sidebar-menu a:last-child {
+  margin-top: auto;
+}
+
+.sidebar-menu a {
+  color: white;
+  text-decoration: none;
+  margin: 0.8rem 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  transition: background 0.3s;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.sidebar-menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 2rem 3rem;       
+  background-color: #f3f4f6;
+  box-sizing: border-box;
+  color: #333;
+  overflow-x: auto;
+}
+
+/* Estilos para tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+.acciones {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.btn {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.crear-grande {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.crear-grande:hover {
+  background-color: #45a049;
+}
+
+.btn.editar {
+  background-color: #FFC107;
+  color: white;
+}
+
+.btn.eliminar {
+  background-color: #F44336;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .admin-dashboard {
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  .sidebar-title {
+    display: none; /* Ocultamos título en pantallas pequeñas */
+  }
+
+  .sidebar-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .sidebar-menu a {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 0.6rem;
+    white-space: nowrap;
+    font-size: 0.9rem;
+  }
+
+  .dashboard-content {
+    padding: 1rem;
+  }
+
+  table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  table thead,
+  table tbody,
+  table th,
+  table td,
+  table tr {
+    display: table;
+    width: 100%;
+    table-layout: auto;
+  }
+
+  th, td {
+    white-space: nowrap;
+    padding: 10px 12px;
+    text-align: left;
+  }
+}
