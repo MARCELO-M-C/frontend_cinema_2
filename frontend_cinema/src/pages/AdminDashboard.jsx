@@ -9,6 +9,24 @@ function AdminDashboard() {
 
   const [seccion, setSeccion] = useState(null);
   const [datos, setDatos] = useState([]);
+  const [reporte, setReporte] = useState(null);
+  const [mostrarPopup, setMostrarPopup] = useState(false);
+
+  const abrirReporte = async (funcionId) => {
+  try {
+    const token = localStorage.getItem('token');
+    const res = await axios.get(`https://backendcinema-production.up.railway.app/api/reservas/reporte/${funcionId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+    setReporte(res.data);
+    setMostrarPopup(true);
+  } catch (error) {
+    console.error("Error al obtener el reporte:", error);
+    alert("No se pudo obtener el reporte.");
+  }
+};
 
   useEffect(() => {
     const fetchData = async () => {
@@ -158,6 +176,12 @@ function AdminDashboard() {
             }}
           >
             <FaTrash />
+          </button>
+          <button
+            className="btn reporte"
+            onClick={() => abrirReporte(item.id)}
+          >
+            📊 Reporte
           </button>
         </>
       )}
@@ -388,6 +412,21 @@ function AdminDashboard() {
 
     <main className="dashboard-content">
       {renderContenido()}
+      {mostrarPopup && reporte && (
+      <div className="popup-overlay">
+        <div className="popup-contenido">
+          <button className="popup-cerrar" onClick={() => setMostrarPopup(false)}>✖</button>
+          <h3>Reporte de Actividad</h3>
+          <p><strong>Función:</strong> {reporte.funcion_id}</p>
+          <p><strong>Sala:</strong> {reporte.sala}</p>
+          <p><strong>Fecha:</strong> {new Date(reporte.fecha).toLocaleDateString('es-ES')}</p>
+          <p><strong>Capacidad:</strong> {reporte.capacidad} butacas</p>
+          <p><strong>Butacas reservadas:</strong> {reporte.butacasReservadas}</p>
+          <p><strong>Ingresos totales:</strong> ${reporte.ingresosTotales}</p>
+          <p><strong>Ingresos perdidos:</strong> ${reporte.ingresosPerdidos}</p>
+        </div>
+      </div>
+    )}
     </main>
   </div>
 );
